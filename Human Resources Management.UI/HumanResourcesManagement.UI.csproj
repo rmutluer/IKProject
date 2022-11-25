@@ -1,0 +1,87 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Human_Resources_Management.UI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HumanResourcesManagement.BUSINESS\HumanResourcesManagement.BUSINESS.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\404.svg" />
+    <None Include="wwwroot\images\brand-dark-01.svg" />
+    <None Include="wwwroot\images\brand-dark-02.svg" />
+    <None Include="wwwroot\images\brand-dark-03.svg" />
+    <None Include="wwwroot\images\brand-dark-04.svg" />
+    <None Include="wwwroot\images\brand-dark-05.svg" />
+    <None Include="wwwroot\images\brand-dark-06.svg" />
+    <None Include="wwwroot\images\brand-light-01.svg" />
+    <None Include="wwwroot\images\brand-light-02.svg" />
+    <None Include="wwwroot\images\brand-light-03.svg" />
+    <None Include="wwwroot\images\brand-light-04.svg" />
+    <None Include="wwwroot\images\brand-light-05.svg" />
+    <None Include="wwwroot\images\brand-light-06.svg" />
+    <None Include="wwwroot\images\icon-01.svg" />
+    <None Include="wwwroot\images\icon-02.svg" />
+    <None Include="wwwroot\images\icon-03.svg" />
+    <None Include="wwwroot\images\icon-04.svg" />
+    <None Include="wwwroot\images\icon-05.svg" />
+    <None Include="wwwroot\images\icon-06.svg" />
+    <None Include="wwwroot\images\icon-07.svg" />
+    <None Include="wwwroot\images\icon-calender.svg" />
+    <None Include="wwwroot\images\icon-man.svg" />
+    <None Include="wwwroot\images\icon-moon.svg" />
+    <None Include="wwwroot\images\icon-play.svg" />
+    <None Include="wwwroot\images\icon-quote.svg" />
+    <None Include="wwwroot\images\logo-dark.svg" />
+    <None Include="wwwroot\images\logo-light.svg" />
+    <None Include="wwwroot\images\shape-01.svg" />
+    <None Include="wwwroot\images\shape-02.svg" />
+    <None Include="wwwroot\images\shape-03.svg" />
+    <None Include="wwwroot\images\shape-04.svg" />
+    <None Include="wwwroot\images\shape-05.svg" />
+    <None Include="wwwroot\images\shape-06.svg" />
+    <None Include="wwwroot\images\shape-07.svg" />
+    <None Include="wwwroot\images\shape-08.svg" />
+    <None Include="wwwroot\images\shape-09.svg" />
+    <None Include="wwwroot\images\shape-10.svg" />
+    <None Include="wwwroot\images\shape-11.svg" />
+    <None Include="wwwroot\images\shape-12.svg" />
+    <None Include="wwwroot\images\shape-13.svg" />
+    <None Include="wwwroot\images\shape-14.svg" />
+    <None Include="wwwroot\images\shape-15.svg" />
+    <None Include="wwwroot\images\shape-16.svg" />
+    <None Include="wwwroot\images\shape-17.svg" />
+    <None Include="wwwroot\images\shape-18.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\temp\startbootstrap-sb-admin-2-gh-pages\startbootstrap-sb-admin-2-gh-pages\vendor\fontawesome-free\svgs\" />
+  </ItemGroup>
+
+</Project>

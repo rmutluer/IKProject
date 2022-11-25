@@ -1,0 +1,66 @@
+﻿@model Human_Resources_Management.ENTITIES.Entities.AdvancePayment
+
+@{
+    ViewData["Title"] = "ApprovalPayment";
+    Layout = "~/Views/Shared/_LayoutManager.cshtml";
+}
+
+<body style="background-color: #f2edf3 ">
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-md-4">
+            <form asp-action="ApprovalPayment" style="margin-top:10%;">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="AvansRequestDate" class="control-label"><b>Avans Talep Tarihi</b></label>
+                    <input asp-for="AvansRequestDate" class="form-control" />
+                    <span asp-validation-for="AvansRequestDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"><b>Avans Açıklaması</b></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Avans" class="control-label"><b>Avans Tutarı</b></label>
+                    <input asp-for="Avans" class="form-control" />
+                    <span asp-validation-for="Avans" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PriceUnit" class="control-label"><b>Para Birimi</b></label>
+                    <select asp-for="PriceUnit" asp-items="@Html.GetEnumSelectList<PriceUnit>()" class="form-control"> </select>
+                    <span asp-validation-for="PriceUnit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AproveStatus" class="control-label"><b>Avans Onay Durumu</b></label>
+                    <select style="width:100%" asp-for="AproveStatus">
+                        <option>Lütfen Seçiniz..</option>
+                        <option value="@AproveStatus.Onaylandi">Onayla</option>
+                        <option value="@AproveStatus.Onaylanmadi">Reddet</option>
+                    </select>
+                    <span asp-validation-for="AproveStatus" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+
+                    <input type="hidden" asp-for="PersonID" class="form-control" />
+
+                </div>
+                <div class="form-group">
+
+                    <input type="hidden" asp-for="ID" class="form-control" />
+
+                </div>
+                <div class="form-group">
+                    <input asp-route-id="@Context.User.FindFirst("ID").Value.ToString()" type="submit" value="Kaydet" class="btn  ml-3" style=" color: white; background-color: #478ba2; border-radius: 40px; width: 150px;margin-left:10%" />
+                    <a class="btn" style="color: white; background-color: #478ba2;  border-radius: 40px; width: 150px; margin-left:2%" asp-action="GetPaymentList" asp-route-id="@Context.User.FindFirst("ID").Value.ToString()">Geri Dön</a>
+                </div>
+              
+            </form>
+        </div>
+    </div>
+</body>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

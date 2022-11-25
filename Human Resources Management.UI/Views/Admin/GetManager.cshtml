@@ -1,0 +1,164 @@
+﻿@model IEnumerable<Human_Resources_Management.ENTITIES.Entities.Person>
+
+@{
+    ViewData["Title"] = "GetManager";
+    Layout = "_LayoutManager";
+}
+
+<body style="background-color: #f2edf3 ">
+    <div  class="container-fluid" style="overflow:scroll">
+        <table class="table table-bordered table-hover table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.FirstName)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.LastName)</b>
+                    </th>
+                    @*<th>
+                        <b>@Html.DisplayNameFor(model => model.MiddleName)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.MaidenName)</b>
+                    </th>*@
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.DepartmansEnum)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Job)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HireDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LeaveJobDate)
+                    </th>*@
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.BirthDate)</b>
+                    </th>
+                    <th>
+                        <b> @Html.DisplayNameFor(model => model.Address)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.Mail)</b>
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.Password)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ReportsTo)
+                    </th>*@
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.PersonelPhoneNumber)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.CompanyPhoneNumber)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.Gender)</b>
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.RoleEnum)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Salary)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CompanyID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ID)
+                    </th>*@
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.PhotoName)</b>
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.IsActive)
+                    </th>*@
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.MiddleName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MaidenName)
+                        </td>*@
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.DepartmansEnum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Job)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HireDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LeaveJobDate)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BirthDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Mail)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReportsTo)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PersonelPhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyPhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gender)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.RoleEnum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Salary)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ID)
+                        </td>*@
+                        <td>
+                            <img style="width:50px;height:50px" src="@item.PhotoName" />
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.IsActive)
+                        </td>*@
+                        @*<td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>*@
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+
+

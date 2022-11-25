@@ -1,0 +1,77 @@
+﻿@model Human_Resources_Management.ENTITIES.Entities.AdvancePayment
+
+@{
+    ViewData["Title"] = "UpdatePayment";
+    Layout = "~/Views/Shared/_LayoutManager.cshtml";
+}
+
+<body style="background-color: #f2edf3 ">
+    <br />
+    <h1 style="text-align: center; font-family: Consolas; font-weight: bolder; color: #478ba2;">AVANS GÜNCELLE</h1>
+    <hr />
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-md-4">
+            <form asp-action="UpdatePayment" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<div class="form-group">
+                        <label asp-for="AvansRequestDate" class="control-label"></label>
+                        <input asp-for="AvansRequestDate" class="form-control" />
+                        <span asp-validation-for="AvansRequestDate" class="text-danger"></span>
+                    </div>*@
+                @*<div class="form-group">
+                        <label asp-for="AvansResponseDate" class="control-label"></label>
+                        <input asp-for="AvansResponseDate" class="form-control" />
+                        <span asp-validation-for="AvansResponseDate" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Avans" class="control-label"></label>
+                    <input asp-for="Avans" class="form-control" />
+                    <span asp-validation-for="Avans" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PriceUnit" class="control-label"></label>
+                    <select asp-for="PriceUnit" asp-items="@Html.GetEnumSelectList<PriceUnit>()" class="form-control"> </select>
+                    <span asp-validation-for="PriceUnit" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                        <label asp-for="AproveStatus" class="control-label"></label>
+                        <input asp-for="AproveStatus" class="form-control" />
+                        <span asp-validation-for="AproveStatus" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+
+                    <input type="hidden" asp-for="PersonID" class="form-control" />
+
+                </div>
+                @*<div class="form-group">
+                        <label asp-for="ID" class="control-label"></label>
+                        <input asp-for="ID" class="form-control" />
+                        <span asp-validation-for="ID" class="text-danger"></span>
+                    </div>*@
+                @*<div class="form-group">
+                        <label asp-for="PhotoName" class="control-label"></label>
+                        <input asp-for="PhotoName" class="form-control" />
+                        <span asp-validation-for="PhotoName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                        </label>
+                    </div>*@
+                <div class="form-group">
+                    <input class="btn" style=" color: white; background-color: #478ba2; border-radius: 40px; width: 100%;"  type="submit" value="Kaydet" />
+                    <br />
+                    <br />
+                    <a class="btn" style=" color: white; background-color: #478ba2; border-radius: 40px; width: 100%;" asp-action="PaymentList" asp-route-id="@Context.User.FindFirst("ID").Value.ToString()">Geri Dön</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+

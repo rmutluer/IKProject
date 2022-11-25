@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Human_Resources_Management.ENTITIES.Entities.Package>
+
+@{
+    ViewData["Title"] = "GetPackage";
+    Layout = "_LayoutManager";
+
+}
+
+
+<body style="background-color: #f2edf3 ">
+    <div  class="container-fluid" style="overflow:scroll">
+
+        <table class="table table-bordered table-hover table-striped table-responsive">
+
+            <thead class="thead-dark" style="text-align:center; font-weight:500;">
+                <tr>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.PackageName)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.NumberOfUsers)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.ValidityDay)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.StartDate)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.EndDate)</b>
+                    </th>
+
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.Price)</b>
+                    </th>
+                    <th>
+                        <b> @Html.DisplayNameFor(model => model.PriceUnit)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.Description)</b>
+                    </th>
+
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.PhotoName)</b>
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody style="text-align:center">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PackageName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NumberOfUsers)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValidityDay)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndDate)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PriceUnit)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+
+                        <td>
+                            <img style="width:50px;height:50px" src="@item.PhotoName" />
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+

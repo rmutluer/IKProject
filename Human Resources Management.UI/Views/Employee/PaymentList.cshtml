@@ -1,0 +1,98 @@
+﻿@model Human_Resources_Management.ENTITIES.ViewModel.PersonPayments
+
+@{
+    ViewData["Title"] = "PaymentList";
+    Layout = "~/Views/Shared/_LayoutManager.cshtml";
+}
+
+<body style="background-color: #f2edf3 " >
+    <div class="container-fluid">
+        <table class="table table-bordered table-hover table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        <b>Avans Talep Tarihi</b>
+                    </th>
+                    <th>
+                        <b>Avans Cevap Tarihi</b>
+                    </th>
+                    <th>
+                        <b>Avans Açıklaması</b>
+                    </th>
+                    <th>
+                        <b>Avans Tutarı</b>
+                    </th>
+                    <th>
+                        <b>Para Birimi</b>
+                    </th>
+                    <th>
+                        <b>Durum</b>
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.PersonID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ID)
+                    </th>*@
+                    @*<th>
+                        Photo
+                    </th>*@
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.IsActive)
+                    </th>*@
+                    <th><b>İşlemler</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.AdvancePayments)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AvansRequestDate)
+                        </td>
+                        <td>
+                            @if (item.AvansResponseDate != new DateTime(01, 01, 0001))
+                            {
+                                @Html.DisplayFor(modelItem => item.AvansResponseDate)
+                            }
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Avans)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PriceUnit)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AproveStatus)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.PersonID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ID)
+                        </td>*@
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.Photo)
+                        </td>*@
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.IsActive)
+                        </td>*@
+                        <td>
+                            @if (item.AproveStatus == AproveStatus.OnayBekliyor)
+                            {
+                                <a class="btn form-control" style="color: white; background-color: #478ba2; font-size:medium;  border-radius: 40px; width: 100%; " asp-action="UpdatePayment" asp-controller="Employee" asp-route-id="@item.ID">Güncelle</a>
+                            }
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+
+

@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourcesManagement.UI", "Human Resources Management.UI\HumanResourcesManagement.UI.csproj", "{1F4CC9AC-D666-4D42-B8CD-F10B4B48EE5A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourcesManagement.ENTITIES", "Human Resources Management.ENTITIES\HumanResourcesManagement.ENTITIES.csproj", "{2799D006-09A5-4173-8B33-0542C7AA6385}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourcesManagement.REPOSITORIES", "Human Resources Management.REPOSITORIES\HumanResourcesManagement.REPOSITORIES.csproj", "{B363DF22-37F8-4DB3-BB55-07BC0AD1993B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourcesManagement.BUSINESS", "HumanResourcesManagement.BUSINESS\HumanResourcesManagement.BUSINESS.csproj", "{950A3021-BD97-4B77-BA84-C627CA00F01A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F4CC9AC-D666-4D42-B8CD-F10B4B48EE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F4CC9AC-D666-4D42-B8CD-F10B4B48EE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F4CC9AC-D666-4D42-B8CD-F10B4B48EE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F4CC9AC-D666-4D42-B8CD-F10B4B48EE5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2799D006-09A5-4173-8B33-0542C7AA6385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2799D006-09A5-4173-8B33-0542C7AA6385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2799D006-09A5-4173-8B33-0542C7AA6385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2799D006-09A5-4173-8B33-0542C7AA6385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B363DF22-37F8-4DB3-BB55-07BC0AD1993B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B363DF22-37F8-4DB3-BB55-07BC0AD1993B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B363DF22-37F8-4DB3-BB55-07BC0AD1993B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B363DF22-37F8-4DB3-BB55-07BC0AD1993B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{950A3021-BD97-4B77-BA84-C627CA00F01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{950A3021-BD97-4B77-BA84-C627CA00F01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{950A3021-BD97-4B77-BA84-C627CA00F01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{950A3021-BD97-4B77-BA84-C627CA00F01A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC59095F-FDE2-47E5-8F3E-310A57011DB4}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/muhammedkoc10
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Human\u0020Resources\u0020Management.ENTITIES\\HumanResourcesManagement.ENTITIES.csproj
+		SccProjectName1 = Human\u0020Resources\u0020Management.ENTITIES
+		SccLocalPath1 = Human\u0020Resources\u0020Management.ENTITIES
+		SccProjectUniqueName2 = Human\u0020Resources\u0020Management.REPOSITORIES\\HumanResourcesManagement.REPOSITORIES.csproj
+		SccProjectName2 = Human\u0020Resources\u0020Management.REPOSITORIES
+		SccLocalPath2 = Human\u0020Resources\u0020Management.REPOSITORIES
+		SccProjectUniqueName3 = Human\u0020Resources\u0020Management.UI\\HumanResourcesManagement.UI.csproj
+		SccProjectName3 = Human\u0020Resources\u0020Management.UI
+		SccLocalPath3 = Human\u0020Resources\u0020Management.UI
+		SccProjectUniqueName4 = HumanResourcesManagement.BUSINESS\\HumanResourcesManagement.BUSINESS.csproj
+		SccProjectName4 = HumanResourcesManagement.BUSINESS
+		SccLocalPath4 = HumanResourcesManagement.BUSINESS
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,103 @@
+﻿@model Human_Resources_Management.ENTITIES.ViewModel.PersonSpending
+
+@{
+    ViewData["Title"] = "GetSpendingList";
+    Layout = "_LayoutManager";
+}
+
+
+
+<body style="background-color: #f2edf3;">
+    <div  overflow: scroll;" class="container-fluid">
+        <table class="table table-bordered table-hover table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        <b>Harcama Talep Tarihi</b>
+                    </th>
+                    @*<th>
+                        SpendingResponseDate
+                    </th>*@
+                    <th>
+                        <b> Harcama Tutarı</b>
+                    </th>
+                    <th>
+                        <b>Harcama Türü</b>
+                    </th>
+                    <th>
+                        <b>Para Birimi</b>
+                    </th>
+                    <th>
+                        <b>Durum</b>
+                    </th>
+                    <th>
+                        <b>Personel Adı Soyadı</b>
+                    </th>
+                    @*<th>
+                        ID
+                    </th>*@
+                    <th>
+                        <b>Harcama Belgesi</b>
+                    </th>
+                    @*<th>
+                        IsActive
+                    </th>*@
+                    <th><b>İşlemler</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Expenses)
+                {
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SpendingRequestDate)
+                        </td>
+                        @*<td>
+                            @item.SpendingResponseDate
+                        </td>*@
+                        <td>
+                            @item.Spending
+                        </td>
+                        <td>
+                            @item.SpendingType
+                        </td>
+                        <td>
+                            @item.PriceUnit
+                        </td>
+                        <td>
+                            @item.AproveStatus
+                        </td>
+                        <td>
+                            @item.Person.FirstName @item.Person.LastName
+                        </td>
+                        @*<td>
+                            @item.ID
+                        </td>*@
+                        <td>
+                            <img src="/img/@item.PhotoName" />
+                        </td>
+                        @*<td>
+                            @item.IsActive
+                        </td>*@
+                        <td>
+                            @if (item.AproveStatus==AproveStatus.OnayBekliyor)
+                            {
+                            <a asp-action="Approval" asp-controller="Manager" asp-route-id="@item.ID" class="btn" style="color: white; background-color: #478ba2; border-radius: 60px;  width: 100%;">Düzenle</a>
+                            }
+                            
+
+                        </td>
+                    </tr>
+
+                }
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+

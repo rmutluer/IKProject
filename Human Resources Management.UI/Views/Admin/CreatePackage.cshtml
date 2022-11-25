@@ -1,0 +1,96 @@
+﻿@model Human_Resources_Management.ENTITIES.Entities.Package
+
+
+@{
+    ViewData["Title"] = "CreatePackage";
+    Layout = "_LayoutManager";
+}
+
+<body  style="background-color: #f2edf3 ">
+    <br />
+    <h1 style="text-align: center; font-family: Consolas; font-weight: bolder; color: #478ba2;">PAKET EKLE</h1>
+    <hr />
+
+    <br />
+    <br />
+    <div class="row justify-content-md-center" style=" overflow: scroll;">
+        <div class="col-lg-3">
+            <form enctype="multipart/form-data" asp-action="CreatePackage">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="PackageName" class="control-label"></label>
+                    <input asp-for="PackageName" class="form-control" />
+                    <span asp-validation-for="PackageName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NumberOfUsers" class="control-label"></label>
+                    <input asp-for="NumberOfUsers" class="form-control" />
+                    <span asp-validation-for="NumberOfUsers" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ValidityDay" class="control-label"></label>
+                    <input asp-for="ValidityDay" class="form-control" />
+                    <span asp-validation-for="ValidityDay" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StartDate" class="control-label"></label>
+                    <input asp-for="StartDate" class="form-control" />
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EndDate" class="control-label"></label>
+                    <input asp-for="EndDate" class="form-control" />
+                    @if (ViewBag.Hata != null)
+                    {
+                        <p class="text-danger">@ViewBag.Hata</p>
+                    }
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PriceUnit" class="control-label"></label>
+                    <select asp-for="PriceUnit" asp-items="@Html.GetEnumSelectList<PriceUnit>()" class="form-control"> </select>
+                    <span asp-validation-for="PriceUnit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Photo" class="control-label"></label>
+                    <input asp-for="Photo" type="file" accept=" image/png,image/jpeg" class="form-control" />
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                <div class="input-group align-items-center mb-4">
+                    @if (ViewBag.PackageHata != null)
+                    {
+                    <p class="text-danger">@ViewBag.PackageHata</p>
+                    }
+                    <br />
+                    <br />
+                
+                    <input style="color: white; font-size:medium; background-color: #478ba2; border-radius: 40px; width: 200px; " class="btn form-control" type="submit" value="Paket Ekle" />
+                    @*<a style="color: white; font-size:medium; background-color: #478ba2; border-radius: 40px; width: 200px; " class="btn form-control">Paket Ekle</a>*@
+                    <br />
+                    <br />
+                    <a class="btn form-control" style="color: white; background-color: #478ba2; border-radius: 40px; width: 300px; font-size:medium" asp-action="GetPackage" asp-controller="Admin">Geri Dön</a>
+                </div>
+
+            </form>
+           
+        </div>
+    </div>
+    @*<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>*@
+
+    @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+
+</body>

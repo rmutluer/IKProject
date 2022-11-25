@@ -1,0 +1,17 @@
+﻿@model List<Human_Resources_Management.ENTITIES.Entities.Expenses>
+
+@foreach (var e in Model)
+{
+    <a class="dropdown-item preview-item">
+        <div class="preview-thumbnail">
+            <div class="preview-icon bg-success">
+                <i class="mdi mdi-calendar"></i>
+            </div>
+        </div>
+        <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+            <h6 class="preview-subject font-weight-normal mb-1"> @e.Person.FirstName @e.Person.LastName </h6>
+            <p class="text-gray ellipsis mb-0"> Harcama Bildirdi. </p>
+        </div>
+    </a>
+    <div class="dropdown-divider"></div>
+}

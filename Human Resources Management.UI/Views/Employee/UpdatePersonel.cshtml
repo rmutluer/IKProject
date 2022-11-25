@@ -1,0 +1,52 @@
+﻿@model Human_Resources_Management.ENTITIES.Entities.Person
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "_LayoutManager";
+}
+
+
+
+
+<body style="background-color: #f2edf3 ">
+    <br />
+    <h1 style="text-align: center; font-family: Consolas; font-weight: bolder; color: #478ba2;">BİLGİLERİ GÜNCELLE</h1>
+    <hr />
+    @*<h4>Person</h4>*@
+    <br />
+    <br />
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-lg-3">
+
+            <form enctype="multipart/form-data" asp-action="UpdatePersonel">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class=" form-group">
+                    <label style="font-size:large" asp-for="Photo" class="control-label"><b>Fotoğraf</b></label>
+                    <input asp-for="Photo" class="form-control" />
+                    <span asp-validation-for="Photo" type="file" accept=" image/png,image/jpeg" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="font-size:large" asp-for="Address" class="control-label"><b>Adres</b></label>
+                    <textarea asp-for="Address" class="form-control"></textarea>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="font-size:large" asp-for="PersonelPhoneNumber" class="control-label"><b>Telefon</b></label>
+                    <input asp-for="PersonelPhoneNumber" type="text" maxlength="14" class="phone form-control"  placeholder="(555) 555-5555" />
+                    <span asp-validation-for="PersonelPhoneNumber" class="text-danger"></span>
+                </div>
+
+                <br />
+                <div class="align-items-center">
+                    <input class="btn " style=" color: white; background-color: #478ba2; border-radius: 40px; width: 100%;" type="submit" value="Kaydet" />
+                    <input class="btn mt-3" style=" color: white; background-color: #478ba2; border-radius: 40px; width: 100%;" asp-action="GetPersonel" type="submit" value="Geri Dön" asp-route-id="@Context.User.FindFirst("ID").Value.ToString()" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

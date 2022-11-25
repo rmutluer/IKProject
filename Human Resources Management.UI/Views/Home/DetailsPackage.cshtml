@@ -1,0 +1,73 @@
+﻿@model Human_Resources_Management.ENTITIES.Entities.Package
+
+@{
+    ViewData["Title"] = "DetailsPackage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body style="background-color: #f2edf3;">
+    <br />
+    <h1 style="text-align: center; margin-top:3%; color: #478ba2; font-family: Consolas; font-weight: bolder">PAKETİN DETAYLARI</h1>
+    <hr />
+    <div style="margin-left:40%">
+        <dl class="row align-items-center">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Photo)
+            </dt>
+            <dd class="col-sm-10">
+                <img style="width:150px;height:150px" src="@Model.PhotoName" />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PackageName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PackageName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NumberOfUsers)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NumberOfUsers)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ValidityDay)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ValidityDay)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.StartDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.StartDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.EndDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.EndDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PriceUnit)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PriceUnit)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+        </dl>
+        <a class="btn" style="color: white; background-color: #478ba2; font-size: medium; border-radius: 40px; width: 200px;" asp-action="Index" asp-controller="Home">Geri Dön</a>
+    </div>
+</body>

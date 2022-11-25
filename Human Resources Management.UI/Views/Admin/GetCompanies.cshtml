@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Human_Resources_Management.ENTITIES.Entities.Company>
+
+@{
+    ViewData["Title"] = "GetCompanies";
+    Layout = "~/Views/Shared/_LayoutManager.cshtml";
+}
+
+<body style="background-color: #f2edf3 ">
+    <div class="container-fluid" style="overflow:scroll">
+        <table class="table table-bordered table-hover table-striped table-responsive">
+            <thead class="thead-dark" style="text-align:center; font-weight:500;">
+                <tr>
+                    <th>
+                        <b>
+                            @Html.DisplayNameFor(model => model.CompanyName)
+                        </b>
+                    </th>
+                    <th>
+                        <b>
+                            @Html.DisplayNameFor(model => model.CorporateName)
+                        </b>
+                    </th>
+                    <th>
+                        <b>
+                            @Html.DisplayNameFor(model => model.CompanyAddress)
+                        </b>
+                    </th>
+                    <th>
+                        <b>
+                            @Html.DisplayNameFor(model => model.CompanyMail)
+                        </b>
+                    </th>
+                    <th>
+                        <b>
+                            @Html.DisplayNameFor(model => model.CompanyPhoneNumber)
+                        </b>
+                    </th>
+                    <th>
+                        <b>
+                            @Html.DisplayNameFor(model => model.TaxNumber)
+                        </b>
+                    </th>
+                    <th>
+                        <b>
+                            @Html.DisplayNameFor(model => model.TaxAdministration)
+                        </b>
+                    </th>
+                    <th>
+                        <b>
+                            @Html.DisplayNameFor(model => model.KindOfCorporation)
+                        </b>
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.PackageID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ID)
+                    </th>*@
+                <th>
+                    <b>
+                        @Html.DisplayNameFor(model => model.Photo)
+                </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.IsActive)
+                    </th>*@
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody style="text-align:center">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CorporateName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyMail)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyPhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TaxNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TaxAdministration)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.KindOfCorporation)
+                        </td>
+                      
+                        <td>
+                            <img style="width:50px;height:50px" src="@item.PhotoName" />
+                        </td>
+                      
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+

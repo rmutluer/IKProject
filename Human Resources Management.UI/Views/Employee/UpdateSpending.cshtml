@@ -1,0 +1,84 @@
+﻿@model Human_Resources_Management.ENTITIES.Entities.Expenses
+
+@{
+    ViewData["Title"] = "UpdateSpending";
+    Layout = "_LayoutManager";
+}
+
+<body style="background-color: #f2edf3 ">
+    <br />
+    <h1 style="text-align: center; font-family: Consolas; font-weight: bolder; color: #478ba2;">HARCAMA GÜNCELLE</h1>
+    <hr />
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-md-4">
+            <form asp-action="UpdateSpending" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<div class="form-group">
+                        <label asp-for="SpendingRequestDate" class="control-label"></label>
+                        <input asp-for="SpendingRequestDate" class="form-control" />
+                        <span asp-validation-for="SpendingRequestDate" class="text-danger"></span>
+                    </div>*@
+                @*<div class="form-group">
+                        <label asp-for="SpendingResponseDate" class="control-label"></label>
+                        <input asp-for="SpendingResponseDate" class="form-control" />
+                        <span asp-validation-for="SpendingResponseDate" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <label asp-for="Spending" class="control-label">Harcama Tutarı</label>
+                    <input asp-for="Spending" class="form-control" />
+                    <span asp-validation-for="Spending" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SpendingType" class="control-label">Harcama Türü</label>
+                    <select asp-for="SpendingType" asp-items="@Html.GetEnumSelectList<SpendingType>()" class="form-control"> </select>
+                    <span asp-validation-for="SpendingType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PriceUnit" class="control-label">Para Birimi</label>
+                    <select asp-for="PriceUnit" asp-items="@Html.GetEnumSelectList<PriceUnit>()" class="form-control"> </select>
+                    <span asp-validation-for="PriceUnit" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                        <label asp-for="AproveStatus" class="control-label"></label>
+                        <input asp-for="AproveStatus" class="form-control" />
+                        <span asp-validation-for="AproveStatus" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+
+                    <input type="hidden" asp-for="PersonID" class="form-control" />
+
+                </div>
+                @*<div class="form-group">
+                        <label asp-for="ID" class="control-label"></label>
+                        <input asp-for="ID" class="form-control" />
+                        <span asp-validation-for="ID" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <label asp-for="Photo" class="control-label"></label>
+                    @if (ViewBag.Hata!=null)
+                    {
+                        <p> ViewBag.Hata</p>
+                    }
+                    <input asp-for="Photo" class="form-control" />
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                @*<div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                        </label>
+                    </div>*@
+                <div class="form-group" style="">
+                    <input class="btn" style=" color: white; background-color: #478ba2; border-radius: 40px; width:100%;" type="submit" value="Kaydet" />
+                    <br />
+                    <br />
+                    <a class="btn" style=" color: white; background-color: #478ba2; border-radius: 40px; width:100%;" asp-action="SpendingList" asp-route-id="@Context.User.FindFirst("ID").Value.ToString()">Geri Dön</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

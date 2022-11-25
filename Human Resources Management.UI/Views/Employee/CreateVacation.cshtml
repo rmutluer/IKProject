@@ -1,0 +1,110 @@
+﻿@model Human_Resources_Management.ENTITIES.ViewModel.PersonVacation
+
+@{
+    ViewData["Title"] = "CreateVacation";
+    Layout = "~/Views/Shared/_LayoutManager.cshtml";
+}
+
+<body style="background-color: #f2edf3 ">
+    <br />
+    <h1 class="mt-3" style="text-align: center; font-family: Consolas; font-weight: bolder; color: #478ba2;">İZİN BİLDİR</h1>
+    <hr />
+    <br />
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-md-4">
+            <form asp-action="CreateVacation">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="@Model.Vacation.VacationStartDate" class="control-label"></label>
+                    <input asp-for="@Model.Vacation.VacationStartDate" class="form-control" />
+                    <span asp-validation-for="@Model.Vacation.VacationStartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Vacation.VacationEndDate" class="control-label"></label>
+                    <input asp-for="@Model.Vacation.VacationEndDate" class="form-control" />
+                    <span asp-validation-for="@Model.Vacation.VacationEndDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@Model.Vacation.VacationType" class="control-label"></label>
+                    <select id="vacationtypebox" asp-for="@Model.Vacation.VacationType" asp-items="@Html.GetEnumSelectList<VacationType>()" class="form-control">
+                    </select>
+                    <span asp-validation-for="@Model.Vacation.VacationType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+
+                    <input type="hidden" asp-for="@Model.Vacation.PersonID" class="form-control" />
+
+                </div>
+                <div class="form-group">
+
+                    <input type="hidden" asp-for="@Model.Vacation.ID" class="form-control" />
+
+                </div>
+
+                @if (ViewBag.HataGenderE != null)
+                {
+                    <span class="text-danger">@ViewBag.HataGenderE</span>
+                }
+                @if (ViewBag.HataGenderK != null)
+                {
+                    <span class="text-danger">@ViewBag.HataGenderK</span>
+                }
+
+                @if (ViewBag.TarihiHata != null)
+                {
+                    <span class="text-danger">@ViewBag.TarihiHata</span>
+                }
+
+                @if (ViewBag.Yillik != null)
+                {
+                    <span class="text-danger">@ViewBag.Yillik  Kalan İzin Gününüz @ViewBag.KalanHak</span>
+                }
+                @if (ViewBag.YillikIzin != null)
+                {
+                    <span class="text-danger">@ViewBag.YillikIzin</span>
+                }
+                
+                <br />
+                <br />
+                <div class="form-group">
+                    @if (ViewBag.Stu != null)
+                    {
+                        <p class="text-danger">@ViewBag.Stu</p>}
+                    <input style="color: white; background-color: #478ba2;  border-radius: 40px; width: 48%;" type="submit" value="Kaydet" class="btn form-control" />
+
+                    <a class="btn form-control" style="color: white; background-color: #478ba2;  border-radius: 40px; width: 48%; " asp-action="VacationList" asp-controller="Employee" asp-route-id="@Context.User.FindFirst("ID").Value.ToString()">Geri Dön</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+        <script>
+            $("#vacationtypebox").change(function () {
+                switch ($(this).val()) {
+                    case "1":
+                        alert('Doğum izni 180 gündür !');
+                        break;
+                    case "2":
+                        alert('Babalık izni 5 iş gündür !');
+                        break;
+                    case "3":
+                        alert('Evlilik izni 3 gündür !');
+                        break;
+                    default:
+                        break;
+                }
+            });
+        </script>
+    }
+
+</body>
+
+
+
+
+

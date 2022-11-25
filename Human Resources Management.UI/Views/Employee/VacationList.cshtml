@@ -1,0 +1,77 @@
+﻿@model Human_Resources_Management.ENTITIES.ViewModel.PersonVacations
+@{
+    ViewData["Title"] = "VacationList";
+    Layout = "~/Views/Shared/_LayoutManager.cshtml";
+}
+
+
+
+<body style="background-color: #f2edf3 ">
+    <div class="container-fluid" style="overflow:scroll">
+        <table class="table table-bordered table-hover table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        <b>İzin Başlangıç Tarihi</b>
+                    </th>
+                    <th>
+                        <b>İzin Bitiş Tarihi</b>
+                    </th>
+                    <th>
+                        <b>İzin Talep Tarihi</b>
+                    </th>
+                    <th>
+                        <b>İzin Cevap Tarihi</b>
+                    </th>
+                    <th>
+                        <b>İzin Onay Durumu</b>
+                    </th>
+                    <th>
+                        <b>İzin Türü</b>
+                    </th>
+                  
+                    <th><b>İşlemler</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Vacations)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VacationStartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VacationEndDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VacationRequestDate)
+                        </td>
+                        <td>
+                            @if (item.VacationResponseDate != new DateTime(01, 01, 0001))
+                            {
+                                @Html.DisplayFor(modelItem => item.VacationResponseDate)
+                            }
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AproveStatus)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VacationType)
+                        </td>
+                       
+                        <td>
+                            @if (item.AproveStatus == AproveStatus.OnayBekliyor)
+                            {
+                                <a class="btn form-control" style="color: white; background-color: #478ba2;  border-radius: 40px; width: 100%; " asp-action="RemoveVacation" asp-controller="Employee" asp-route-id="@item.ID">Sil</a>
+                            }
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+  
+</body>
+

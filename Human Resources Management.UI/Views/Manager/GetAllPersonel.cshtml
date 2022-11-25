@@ -1,0 +1,167 @@
+﻿@model IEnumerable<Human_Resources_Management.ENTITIES.Entities.Person>
+
+@{
+    ViewData["Title"] = "PersonelList";
+    Layout = "_LayoutManager";
+
+}
+
+<body style="background-color: #f2edf3">
+    <br />
+    <h1 style="text-align: center; font-family: Consolas; font-weight: bolder; color: #478ba2;">PERSONEL LİSTESİ</h1>
+    <hr />
+    <br />
+    <br />
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped table-responsive">
+            <thead class="thead-dark" style="text-align:center; font-weight:500;">
+                <tr>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.PhotoName)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.FirstName)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.LastName)</b>
+                    </th>
+
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.DepartmansEnum)</b>
+                    </th>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.Job)
+                        </th>
+                            <th>
+                            @Html.DisplayNameFor(model => model.HireDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LeaveJobDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BirthDate)
+                        </th>
+                        <th >
+                            @Html.DisplayNameFor(model => model.Address)
+                        </th>*@
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.Mail)</b>
+                    </th>
+
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.ReportsTo)
+                        </th>*@
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.PersonelPhoneNumber)</b>
+                    </th>
+                    @*<th>
+                        <b>@Html.DisplayNameFor(model => model.CompanyPhoneNumber)</b>
+                    </th>*@
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.Gender)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RoleEnum)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Salary)
+                        </th>*@
+
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.IsActive)</b>
+                    </th>
+                    <th><b>İşlemler</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <img style="width:180px;height:150px" src="@item.PhotoName" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DepartmansEnum)
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Job)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HireDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LeaveJobDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BirthDate)
+                            </td>
+                            <td>
+                                <textarea cols="20">@Html.DisplayFor(modelItem => item.Address)</textarea>
+
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Mail)
+                        </td>
+
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.ReportsTo)
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PersonelPhoneNumber)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.CompanyPhoneNumber)
+                        </td>*@
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Gender)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RoleEnum)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Salary)
+                            </td>*@
+
+
+                        <td>
+
+                            @if (DateTime.Now < item.LeaveJobDate || item.LeaveJobDate == new DateTime(0001, 01, 01))
+                            {
+
+                                <p style="color: forestgreen; text-align: center; vertical-align: central">
+
+                                    Aktif
+                                </p>
+
+                            }
+                            else
+                            {
+                                <p style="color: red; text-align: center; vertical-align: central">
+                                    Pasif
+                                </p>
+
+                            }
+
+                        </td>
+                        <td style="text-align:center;">
+                           
+                            <div style="background-color: #478ba2; border-radius: 40px; width: 100%; ">@Html.ActionLink("Düzenle", "PersonelEdit", "Manager", new { id = item.ID }, htmlAttributes: new { @class = "btn text-white" })</div>
+                            <br />
+                            <div style="background-color: #478ba2; border-radius: 40px; width: 100%; ">@Html.ActionLink("Detay", "PersonelDeatails", "Manager", new { id = item.ID }, htmlAttributes: new { @class = "btn text-white" })</div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+

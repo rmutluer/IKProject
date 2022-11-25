@@ -1,0 +1,154 @@
+﻿@model Human_Resources_Management.ENTITIES.ViewModel.CreatePerson
+
+@{
+    ViewData["Title"] = "CreateEmployee";
+    Layout = "_LayoutManager";
+}
+<body style="background-color: #f2edf3">
+    <br />
+    <h1 style="text-align: center; font-family: Consolas; font-weight: bolder; color: #478ba2;">PERSONEL EKLE</h1>
+    <hr />
+    @*<h4>Person</h4>*@
+    <br />
+
+    <div class="justify-content-center " >
+        <form enctype="multipart/form-data" asp-action="CreateEmployee" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row ml-auto container " style="margin-left:15%; margin-right:15%; padding:3%">
+                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.FirstName" class="control-label"></label>
+                        <input asp-for="@Model.Person.FirstName" class="form-control" />
+                        <span asp-validation-for="@Model.Person.FirstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.MiddleName" class="control-label"></label>
+                        <input asp-for="@Model.Person.MiddleName" class="form-control" />
+                        <span asp-validation-for="@Model.Person.MiddleName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.DepartmansEnum" class="control-label"></label>
+                        <select asp-for="@Model.Person.DepartmansEnum" asp-items="@Html.GetEnumSelectList<DepartmansEnum>()" class="form-control"> </select>
+                        <span asp-validation-for="@Model.Person.DepartmansEnum" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.HireDate" class="control-label"></label>
+                        <input asp-for="@Model.Person.HireDate" class="form-control" />
+                        <span asp-validation-for="@Model.Person.HireDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.Address" class="control-label"></label>
+                        <textarea asp-for="@Model.Person.Address" class="form-control"></textarea>
+                        <span asp-validation-for="@Model.Person.Address" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.PersonelPhoneNumber" class="control-label"></label>
+                        <input asp-for="@Model.Person.PersonelPhoneNumber" type="text" maxlength="14" class="phone form-control" placeholder="(555) 555-5555" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.Gender" class="control-label">Cinsiyet Seçiniz</label>
+                        <select asp-for="@Model.Person.Gender" asp-items="@Html.GetEnumSelectList<GenderEnum>()" class="form-control"> </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.Photo" class="control-label"></label>
+                        <input asp-for="@Model.Person.Photo" type="file" accept=" image/png,image/jpeg" class="form-control" />
+                        <span asp-validation-for="@Model.Person.Photo" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.LastName" class="control-label"></label>
+                        <input asp-for="@Model.Person.LastName" class="form-control" />
+                        <span asp-validation-for="@Model.Person.LastName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.MaidenName" class="control-label"></label>
+                        <input asp-for="@Model.Person.MaidenName" class="form-control" />
+                        <span asp-validation-for="@Model.Person.MaidenName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.Job" class="control-label"></label>
+                        <input asp-for="@Model.Person.Job" class="form-control" />
+                        <span asp-validation-for="@Model.Person.Job" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.BirthDate" class="control-label"></label>
+                        <input asp-for="@Model.Person.BirthDate" class="form-control" />
+                        <span asp-validation-for="@Model.Person.BirthDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.Mail" class="control-label"></label>
+                        <input asp-for="@Model.Person.Mail" class="form-control" />
+                        <span asp-validation-for="@Model.Person.Mail" class="text-danger"></span>
+                    </div>
+                    @* Bu Kolon Personellerin Bağlanması gereken Şirket Yöneticisi olursa açılır *@
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.CompanyPhoneNumber" class="control-label"></label>
+
+                        <input asp-for="@Model.Person.CompanyPhoneNumber" type="text" maxlength="14" class="phone form-control" placeholder="(212) 222-2222" />
+                        <span asp-validation-for="@Model.Person.CompanyPhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.Salary" class="control-label"></label>
+                        <input asp-for="@Model.Person.Salary" class="form-control" />
+                        <span asp-validation-for="@Model.Person.Salary" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+
+            </div>
+           
+           
+
+            <div class="form-group my-5" style="margin: auto; width: 25%;">
+
+                @if (ViewBag.AllReadyAdded != null)
+                {
+                    <span style="font-size:large;" class="text-danger">@ViewBag.AllReadyAdded</span>
+                }
+
+                @if (ViewBag.SonucNegatif != null)
+                {
+                    <span class="text-danger">@ViewBag.SonucNegatif</span>
+                }
+                <br />
+                <br />
+                <input type="submit" value="Personel Ekle" class="btn" style="color: white; background-color: #478ba2;  border-radius: 40px; width:100%; " asp-route-id="@Context.User.FindFirst("ID").Value.ToString()">
+
+                <br />
+                <br />
+
+                <a class="btn" style="color: white; background-color: #478ba2; border-radius: 40px; width: 100%;" asp-action="Index" asp-controller="Manager" asp-route-id="@Context.User.FindFirst("ID").Value.ToString()">Geri Dön</a>
+                @* Şuan için employee index olmadığı için buraya geri döndürdüm.. *@
+            </div>
+
+
+
+
+
+        </form>
+    </div>
+
+
+
+    @*<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>*@
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+</body>
+

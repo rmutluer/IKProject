@@ -1,0 +1,57 @@
+﻿@model Human_Resources_Management.ENTITIES.Entities.Vacation
+
+@{
+    ViewData["Title"] = "RemoveVacation";
+    Layout = "~/Views/Shared/_LayoutManager.cshtml";
+}
+
+<body style="background-color: #f2edf3 ">
+    <div class="container-fluid" style="overflow:scroll">
+
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VacationStartDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VacationStartDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VacationEndDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VacationEndDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VacationRequestDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VacationRequestDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VacationResponseDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VacationResponseDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AproveStatus)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AproveStatus)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VacationType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VacationType)
+            </dd>
+        
+        </dl>
+
+        <form asp-action="RemoveVacation">
+            <input asp-action="VacationList" asp-route-id="@Context.User.FindFirst("ID").Value.ToString()" type="submit" value="Sil" class="btn btn-danger" /> |
+            <a asp-action="VacationList">Listeye Dön</a>
+        </form>
+    </div>
+</body>
+

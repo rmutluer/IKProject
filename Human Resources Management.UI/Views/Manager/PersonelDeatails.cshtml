@@ -1,0 +1,135 @@
+﻿@model Human_Resources_Management.ENTITIES.Entities.Person
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_LayoutManager";
+}
+<body style="background-color: #f2edf3">
+    <br />
+    <h1 style="text-align: center; color: #478ba2;font-family:Consolas; font-weight: bolder">PERSONEL DETAY</h1>
+    <hr />
+    @*<h4>Person</h4>*@
+    <br />
+    <br />
+    <div class="row justify-content-md-center">
+        <div class="align-items-center img-fluid" style="margin-left:75%">
+            <dl>
+                <dd>
+                    <img style="width:180px;height:180px" src="@Model.PhotoName" />
+                </dd>
+            </dl>
+        </div>
+
+        <div class="col-md-2 align-items-center mt-3">
+            <dl class="row mr-4">
+
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.MiddleName)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.MiddleName)
+                </dd>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.MaidenName)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.MaidenName)
+                </dd>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.DepartmansEnum)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.DepartmansEnum)
+                </dd>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.Job)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.Job)
+                </dd>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.HireDate)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.HireDate)
+                </dd>
+
+
+            </dl>
+        </div>
+        <div class="col-md-2 align-items-center mt-3">
+            <dl>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.BirthDate)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.BirthDate)
+                </dd>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.Mail)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.Mail)
+                </dd>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.PersonelPhoneNumber)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.PersonelPhoneNumber)
+                </dd>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.CompanyPhoneNumber)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.CompanyPhoneNumber)
+                </dd>
+                <dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+                @*<dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.RoleEnum)
+                    </dt>
+                    <dd class="col-sm-7">
+                        @Html.DisplayFor(model => model.RoleEnum)
+                    </dd>*@
+                @*<dt style="font-size:large">
+                    @Html.DisplayNameFor(model => model.Salary)
+                </dt>
+                <dd style="font-size:large">
+                    @Html.DisplayFor(model => model.Salary)
+                </dd>*@
+            </dl>
+
+        </div>
+    </div>
+    <br />
+    <div class="align-content-center text-center justify-content-center" style="text-align:center; align-items:center; align-content:center">
+
+        <a class="btn" style="color: white; background-color: #478ba2; border-radius: 40px; width: 250px;" asp-action="PersonelEdit" asp-controller="Manager" asp-route-id="@Model.ID">Personel Güncelle</a>
+
+        <a class="btn" style="color: white; background-color: #478ba2; border-radius: 40px; width: 250px;" asp-action="GetAllPersonel" asp-controller="Manager" asp-route-id="@Context.User.FindFirst("ID").Value.ToString()">Personellere Dön</a>
+    </div>
+
+</body>
+
